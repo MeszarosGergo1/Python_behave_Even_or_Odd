@@ -18,3 +18,21 @@ def step_when_check_number(context):
 @then('the result should be "{expected}"')
 def step_then_result(context, expected):
     assert context.result == expected, f'Elvárt érték "{expected}" de a kapott érték: "{context.result}"'
+
+# TODO: Implementáld a Given step-et
+@given('the number is 5')
+def step_given_number(context):
+    context.number = 5
+
+
+# TODO: Implementáld a When step-et
+# Használd a check_number függvényt a src/number_checker.py fájlból!
+@when('I check the odd number')
+def step_when_check_number(context):
+    context.result = check_number(context.number)
+
+
+# TODO: Implementáld a Then step-et
+@then('the result should be odd: "{expected}"')
+def step_then_result(context, expected):
+    assert context.result == expected, f'Elvárt érték "{expected}" de a kapott érték: "{context.result}"'

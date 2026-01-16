@@ -11,3 +11,8 @@ Feature: Páros szám ellenőrzése
     Given the number is 4
     When I check the number
     Then the result should be "even"
+
+  Scenario: Páratlan szám ellenőrzése
+    Given the number is 5
+    When I check the number
+    Then the result should be "odd"
