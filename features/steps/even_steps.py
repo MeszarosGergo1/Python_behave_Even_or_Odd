@@ -2,9 +2,9 @@ from behave import given, when, then
 from src.number_checker import check_number
 
 # TODO: Implementáld a Given step-et
-@given('the number is 4')
-def step_given_number(context):
-    context.number = 4
+@given('the number is {number}')
+def step_given_number(context, number):
+    context.number = int(number)
 
 
 # TODO: Implementáld a When step-et
@@ -13,12 +13,12 @@ def step_given_number(context):
 def step_when_check_number(context):
     context.result = check_number(context.number)
 
-
 # TODO: Implementáld a Then step-et
 @then('the result should be "{expected}"')
 def step_then_result(context, expected):
     assert context.result == expected, f'Elvárt érték "{expected}" de a kapott érték: "{context.result}"'
 
+"""
 # TODO: Implementáld a Given step-et
 @given('the number is 5')
 def step_given_number(context):
@@ -36,3 +36,7 @@ def step_when_check_number(context):
 @then('the result should be odd: "{expected}"')
 def step_then_result(context, expected):
     assert context.result == expected, f'Elvárt érték "{expected}" de a kapott érték: "{context.result}"'
+@given('the number is {number}')
+def step_given_number(context, number):
+    context.number = int(number)
+"""
